@@ -7,9 +7,7 @@ package pembayaran.frm;
 import DBkoneksi.Koneksi;
 import Dashboard.DashboardAdmin;
 import java.sql.*;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -28,15 +26,11 @@ public class CrudSiswa extends javax.swing.JFrame {
      */
     public CrudSiswa() {
         initComponents();
-        this.autoCheck();
-    }
-    
-    public void autoCheck(){
         k.connect();
         this.recordTable();
-        this.inputId.setVisible(false);
         this.relasiKelas();
         this.relasiSpp();
+        this.inputId.setVisible(false);
     }
     
     
@@ -50,7 +44,6 @@ public class CrudSiswa extends javax.swing.JFrame {
         while(rs.next()){
             this.inputKelas.addItem(rs.getString("id") + ":" + rs.getString("nama_kelas"));
         } 
-        this.getIdCombo();
        }catch(Exception e){
            JOptionPane.showMessageDialog(null, e.getMessage());
        }
@@ -151,7 +144,7 @@ public class CrudSiswa extends javax.swing.JFrame {
             this.recordTable();
             JOptionPane.showMessageDialog(null, "DATA BERHASIL DI HAPUS !");
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "error");
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
     

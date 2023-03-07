@@ -37,7 +37,8 @@ public class DashboardAdmin extends javax.swing.JFrame {
         btnKelolaPetugas = new javax.swing.JButton();
         btnKelolaSpp = new javax.swing.JButton();
         btnKelolaKelas = new javax.swing.JButton();
-        btnKelolaPembayaran = new javax.swing.JButton();
+        btnLaporan = new javax.swing.JButton();
+        btnKelolaPembayaran1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,11 +100,19 @@ public class DashboardAdmin extends javax.swing.JFrame {
             }
         });
 
-        btnKelolaPembayaran.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnKelolaPembayaran.setText("KELOLA DATA PEMBAYARAN");
-        btnKelolaPembayaran.addActionListener(new java.awt.event.ActionListener() {
+        btnLaporan.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnLaporan.setText("LAPORAN PEMBAYARAN");
+        btnLaporan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKelolaPembayaranActionPerformed(evt);
+                btnLaporanActionPerformed(evt);
+            }
+        });
+
+        btnKelolaPembayaran1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnKelolaPembayaran1.setText("KELOLA DATA PEMBAYARAN");
+        btnKelolaPembayaran1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKelolaPembayaran1ActionPerformed(evt);
             }
         });
 
@@ -117,13 +126,16 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(btnKelolaSiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnKelolaKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnKelolaPetugas, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(btnKelolaPembayaran, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnKelolaSpp, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnKelolaKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnKelolaSpp, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnKelolaPetugas, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnKelolaPembayaran1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnLaporan, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,11 +144,13 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnKelolaPembayaran, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnKelolaPetugas, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnKelolaPetugas, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnKelolaPembayaran1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(31, 31, 31)
-                .addComponent(btnKelolaSpp, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnKelolaSpp, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLaporan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(35, 35, 35)
                 .addComponent(btnKelolaKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
@@ -154,12 +168,12 @@ public class DashboardAdmin extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnKelolaPetugasActionPerformed
 
-    private void btnKelolaPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKelolaPembayaranActionPerformed
-        Pembayaran pembayaran = new Pembayaran();
-        pembayaran.setVisible(true);
+    private void btnLaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaporanActionPerformed
+        LaporanPembayaran laporan = new LaporanPembayaran();
+        laporan.setVisible(true);
         this.setVisible(false);
         this.dispose();
-    }//GEN-LAST:event_btnKelolaPembayaranActionPerformed
+    }//GEN-LAST:event_btnLaporanActionPerformed
 
     private void btnKelolaSppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKelolaSppActionPerformed
         CrudSpp spp = new CrudSpp();
@@ -176,13 +190,20 @@ public class DashboardAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnKelolaKelasActionPerformed
 
     private void btnKelolaSiswaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKelolaSiswaActionPerformed
+       CrudSiswa siswa = new CrudSiswa();
+       siswa.setVisible(true);
+       this.setVisible(false);
+       this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnKelolaSiswaActionPerformed
 
-        CrudSiswa siswa = CrudSiswa();
-        siswa.setVisible(true);
+    private void btnKelolaPembayaran1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKelolaPembayaran1ActionPerformed
+        Pembayaran pembayaran = new Pembayaran();
+        pembayaran.setVisible(true);
         this.setVisible(false);
         this.dispose();
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnKelolaSiswaActionPerformed
+    }//GEN-LAST:event_btnKelolaPembayaran1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,10 +242,11 @@ public class DashboardAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnKelolaKelas;
-    private javax.swing.JButton btnKelolaPembayaran;
+    private javax.swing.JButton btnKelolaPembayaran1;
     private javax.swing.JButton btnKelolaPetugas;
     private javax.swing.JButton btnKelolaSiswa;
     private javax.swing.JButton btnKelolaSpp;
+    private javax.swing.JButton btnLaporan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
