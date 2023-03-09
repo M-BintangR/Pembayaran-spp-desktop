@@ -65,7 +65,6 @@ public class CrudSpp extends javax.swing.JFrame {
     }
     
     //! PROSES REKAM
-    
     public void onHandleRekam(){
            try {
             stat = k.getCon().prepareStatement("INSERT INTO tbl_spp VALUES (?,?,?)");
@@ -93,7 +92,6 @@ public class CrudSpp extends javax.swing.JFrame {
     }
     
     //! CLICK TABEL
-    
     public void onHandleClick(){
           this.inputId.setText(model.getValueAt(tblSpp.getSelectedRow(), 0).toString());
           this.inputNominal.setText(model.getValueAt(tblSpp.getSelectedRow(), 1).toString());
